@@ -1,0 +1,66 @@
+:root {
+  --black: #0a0404;
+  --red: #fb1414;
+  --white: #ffffff;
+  --yellow: #f4a635;
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#fondoLogo{
+  background-image: url(../images/madera.jpg);
+  background-size: cover;
+}
+
+body{
+  margin: 0px;
+}
+
+nav{
+  background-color: var(--red);
+  padding: 1%;
+  text-align: center;
+}
+
+.linkBarra {
+  color: var(--white);
+  font-size: large;
+  text-decoration: none;
+  padding: 1%;
+}
+
+.linkBarra:hover {
+  background-color: var(--yellow);
+}
+
+#fondoLogo{
+  background-image: /images/madera.jpg;
+}
+
+.menu{
+  width: 80%;
+  margin: 1%;
+  padding: 1%;
+}
+
+.menu h1{
+  margin: 0;
+}
+
+.menuDerecha{
+  float: right;
+  text-align: right;
+}
+
+.menuIzquierda{
+  float: left;
+  text-align: left;
+}
+
+#sopas{
+  background-color: var(--red);
+}
