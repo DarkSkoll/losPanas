@@ -1,11 +1,11 @@
 document.write("    <header>");
 document.write("      <div id=\"fondoLogo\">");
-document.write("        <img src=\"images/logoNoBg.png\" alt=\"Los Panas\" class=\"center\" width=\"13%\"/>");
+document.write("        <img src=\"images/logoNoBg.png\" alt=\"Los Panas\" class=\"center\" width=\"15%\"/>");
 document.write("      </div>");
 document.write("    </header>");
 document.write("    <nav>");
 document.write("      <a href=\"index.html\" class=\"linkBarra\">Inicio</a>");
 document.write("      <a href=\"menu.html\" class=\"linkBarra\">Menu</a>");
-document.write("      <a href=\"conocenos.html\" class=\"linkBarra\">Conocenos</a>");
 document.write("      <a href=\"contacto.html\" class=\"linkBarra\">Contacto</a>");
+document.write("      <a href=\"ordena.html\" class=\"linkBarra\">Ordena</a>");
 document.write("    </nav>");

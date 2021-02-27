@@ -18,19 +18,22 @@
 
 body{
   margin: 0px;
+  font-family: Helvetica, sans-serif;
 }
 
 nav{
   background-color: var(--red);
-  padding: 1%;
   text-align: center;
 }
 
 .linkBarra {
   color: var(--white);
   font-size: large;
+  font-weight: bold;
   text-decoration: none;
   padding: 1%;
+  width: 10%;
+  display: inline-block;
 }
 
 .linkBarra:hover {
@@ -42,8 +45,7 @@ nav{
 }
 
 .menu{
-  width: 80%;
-  margin: 1%;
+  width: 90%;
   padding: 1%;
 }
 
@@ -51,16 +53,7 @@ nav{
   margin: 0;
 }
 
-.menuDerecha{
-  float: right;
-  text-align: right;
-}
-
-.menuIzquierda{
-  float: left;
-  text-align: left;
-}
-
-#sopas{
-  background-color: var(--red);
+.menu figure {
+  display: inline-block;
+  width: 25%;
 }
