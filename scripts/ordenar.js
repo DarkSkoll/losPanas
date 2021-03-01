@@ -31,6 +31,8 @@ var platos = [
     cantidad: 0, }
 ];
 
+let totalDia = 0;
+
 function ordenar() {
   var i;
   let suma = 0;
@@ -42,7 +44,12 @@ function ordenar() {
       ticket += platos[i].nombre + "\t" + "$" + platos[i].precio + ".00 X " + platos[i].cantidad + "\n";
     }
   }
-  alert(ticket +"\nTotal = $" + suma + ".00");
+  if(suma != 0){
+    alert(ticket +"\nTotal = $" + suma + ".00");
+    totalDia += suma;
+  }else{
+    alert("Su pedido esta vacio");
+  }
 }
 
 function reset(){
@@ -51,7 +58,16 @@ function reset(){
   }
 }
 
+function finalizarDia(){
+  alert("El total del dia fue $"+totalDia+".00");
+  totalDia = 0;
+}
+
 document.getElementById("ordenar").onclick = function (){
   ordenar();
   reset();
+}
+
+document.getElementById("finalizar").onclick = function (){
+  finalizarDia();
 }
