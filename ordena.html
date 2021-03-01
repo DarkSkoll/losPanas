@@ -8,7 +8,7 @@
   </head>
   <body>
     <script type="text/javascript" src="scripts/banner.js"></script>
-    <form id="formaOrden" action="ordena.js" method="get" accept-charset="utf-8">
+    <form id="formaOrden" method="get" accept-charset="utf-8">
       <div class="ordena" id="entradas">
         <h1>Entradas</h1>
         <label>Chistorra</label>
@@ -43,7 +43,7 @@
       <div class="ordena" id="sopas">
         <h1>Sopas</h1>
         <label>Jugo de Carne</label>
-        <select name="jugodeCarne" id="jugodeCarne">
+        <select name="jugoCarne" id="jugoCarne">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -167,7 +167,8 @@
           <option value="10">10</option>
         </select><br></br>
       </div>
-      <input type="submit" value="Ordenar">
     </form>
+    <button id="ordenar" class="center">Ordenar</button>
+    <script type="text/javascript" src="scripts/ordenar.js"></script>
   </body>
 </html>
