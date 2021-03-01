@@ -45,6 +45,13 @@ function ordenar() {
   alert(ticket +"\nTotal = $" + suma + ".00");
 }
 
+function reset(){
+  for(i = 0; i < platos.length; i++){
+    document.getElementById(platos[i].nombre).selectedIndex = 0;
+  }
+}
+
 document.getElementById("ordenar").onclick = function (){
   ordenar();
+  reset();
 }
