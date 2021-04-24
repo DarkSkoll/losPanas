@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+// importar logica de loggeo
+//include "php/sesionManager.php";
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,12 +22,19 @@
       </div>
     </header>
     <nav>
-      <a href="index.html" class="linkBarra">Inicio</a>
+      <a href="index.php" class="linkBarra">Inicio</a>
       <a href="menu.html" class="linkBarra">Menu</a>
       <a href="contacto.html" class="linkBarra">Contacto</a>
       <a href="ordena.html" class="linkBarra">Ordena</a>
     </nav>
     <img src="images/slide/img3.jpg" alt="platillo" class="center" width="100%"/>
+
+    <?php if(!empty($_SESSION['username'])){?>
+        <div>
+            <h1>Hello <?php echo $_SESSION['username'];?></h1>
+        </div>
+    <?php }?>
+
     <div class="nosotros">
       <h1>Nosotros</h1>
       <figure>

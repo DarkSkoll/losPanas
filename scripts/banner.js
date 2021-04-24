@@ -4,7 +4,7 @@ document.write("        <img src=\"images/logoNoBg.png\" alt=\"Los Panas\" class
 document.write("      </div>");
 document.write("    </header>");
 document.write("    <nav>");
-document.write("      <a href=\"index.html\" class=\"linkBarra\">Inicio</a>");
+document.write("      <a href=\"index.php\" class=\"linkBarra\">Inicio</a>");
 document.write("      <a href=\"menu.html\" class=\"linkBarra\">Menu</a>");
 document.write("      <a href=\"contacto.html\" class=\"linkBarra\">Contacto</a>");
 document.write("      <a href=\"ordena.html\" class=\"linkBarra\">Ordena</a>");
