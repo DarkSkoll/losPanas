@@ -1,34 +1,33 @@
 <?php
-
-session_start();
-
-// importar logica de loggeo
-include "php/sesionManager.php";
-include "view/banner.php"
-
+include "banner.php";
+include "../model/dataBaseConnection.php";
+include "../controller/retrieveLoginInfo.php";
+include "../model/getUserData.php";
+include "../controller/login.php";
+include "../controller/logout.php";
 ?>
 
-    <?php if(empty($_SESSION['username'])){?>
-        <div class="container my-5">
+<?php if(empty($_SESSION['username'])){?>
+<div class="logger">
 
-            <form method="POST">
-                <h2>Login</h2>
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <button type="submit" name="login">Login</button>
-            </form>
+  <form method="POST">
+    <h2>Login</h2>
+    <input type="text" name="username" placeholder="Usuario">
+    <input type="password" name="password" placeholder="Contraseña">
+    <button type="submit" name="login">Login</button>
+  </form>
 
-        </div>
-    <?php }?>
+</div>
+<?php }?>
 
-    <?php if(!empty($_SESSION['username'])){?>
-        <div>
-            <h1>Hello <?php echo $_SESSION['username'];?></h1>
-        </div>
+<?php if(!empty($_SESSION['username'])){?>
+<div>
+  <h1>Hola <?php echo $_SESSION['username'];?></h1>
+</div>
 
-        <form method="POST">
-            <button name="logout">Logout</button>
-        </form>
-    <?php }?>
-  </body>
+<form method="POST">
+  <button name="logout">Logout</button>
+</form>
+<?php }?>
+</body>
 </html>

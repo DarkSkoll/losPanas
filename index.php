@@ -1,10 +1,5 @@
 <?php
-
 session_start();
-
-// importar logica de loggeo
-//include "php/sesionManager.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +20,12 @@ session_start();
       <a href="index.php" class="linkBarra">Inicio</a>
       <a href="view/menu.php" class="linkBarra">Menu</a>
       <a href="view/ordena.php" class="linkBarra">Ordena</a>
-      <a href="view/login.php" class="linkBarra">Iniciar Sesion</a>
+      <?php if(empty($_SESSION['username'])){?>
+      <a href="view/login.php" class="linkBarra">Iniciar Sesión</a>
+      <?php }?>
+      <?php if(!empty($_SESSION['username'])){?>
+      <a href="view/login.php" class="linkBarra">Cuenta</a>
+      <?php }?>
     </nav>
     <img src="view/images/slide/img3.jpg" alt="platillo" class="center" width="100%"/>
     <div class="nosotros">
