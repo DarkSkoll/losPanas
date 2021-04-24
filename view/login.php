@@ -4,19 +4,10 @@ session_start();
 
 // importar logica de loggeo
 include "php/sesionManager.php";
+include "view/banner.php"
 
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <title>Login - Los Panas</title>
-  </head>
-  <body>
-    <script type="text/javascript" src="scripts/banner.js"></script>
     <?php if(empty($_SESSION['username'])){?>
         <div class="container my-5">
 
