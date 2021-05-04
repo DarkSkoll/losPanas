@@ -22,7 +22,7 @@ include "../model/getMenuData.php";
   </form>
   <?php } ?>
   <figure>
-    <img src="images/menu/<?php echo $r['image']; ?>" width="100%"/>
+    <img src="<?php echo $r['image']; ?>" width="100%"/>
     <figcaption><?php echo $r['descripcion']; ?><br></br>$<?php printf("%.2F", $r['precio']); ?></figcaption>
   </figure>
   <?php } ?>
@@ -41,7 +41,7 @@ include "../model/getMenuData.php";
   </form>
   <?php } ?>
   <figure>
-    <img src="images/menu/<?php echo $r['image']; ?>" width="100%"/>
+    <img src="<?php echo $r['image']; ?>" width="100%"/>
     <figcaption><?php echo $r['descripcion']; ?><br></br>$<?php printf("%.2F", $r['precio']); ?></figcaption>
   </figure>
   <?php } ?>
@@ -61,7 +61,7 @@ include "../model/getMenuData.php";
   </form>
   <?php } ?>
   <figure>
-    <img src="images/menu/<?php echo $r['image']; ?>" width="100%"/>
+    <img src="<?php echo $r['image']; ?>" width="100%"/>
     <figcaption><?php echo $r['descripcion']; ?><br></br>$<?php printf("%.2F", $r['precio']); ?></figcaption>
   </figure>
   <?php } ?>
@@ -80,7 +80,7 @@ include "../model/getMenuData.php";
   </form>
   <?php } ?>
   <figure>
-    <img src="images/menu/<?php echo $r['image']; ?>" width="100%"/>
+    <img src="<?php echo $r['image']; ?>" width="100%"/>
     <figcaption><?php echo $r['descripcion']; ?><br></br>$<?php printf("%.2F", $r['precio']); ?></figcaption>
   </figure>
   <?php } ?>
@@ -100,7 +100,7 @@ include "../model/getMenuData.php";
   </form>
   <?php } ?>
   <figure>
-    <img src="images/menu/<?php echo $r['image']; ?>" width="100%"/>
+    <img src="<?php echo $r['image']; ?>" width="100%"/>
     <figcaption><?php echo $r['descripcion']; ?><br></br>$<?php printf("%.2F", $r['precio']); ?></figcaption>
   </figure>
   <?php } ?>
@@ -121,7 +121,7 @@ include "../model/getMenuData.php";
   </form>
   <?php } ?>
   <figure>
-    <img src="images/menu/<?php echo $r['image']; ?>" width="100%"/>
+    <img src="<?php echo $r['image']; ?>" width="100%"/>
     <figcaption><?php echo $r['descripcion']; ?><br></br>$<?php printf("%.2F", $r['precio']); ?></figcaption>
   </figure>
   <?php } ?>
