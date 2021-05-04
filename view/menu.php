@@ -4,6 +4,12 @@ include "../model/dataBaseConnection.php";
 include "../model/getMenuData.php";
 ?>
 
+  <?php if(!empty($_SESSION['username']) && $_SESSION['tipo'] == "administrador"){ ?>
+  <form method="get" action="anadir.php">
+    <input type="submit" value="Añadir">
+  </form>
+  <?php } ?>
+
 <div class="menu" id="entradas">
   <h1>Entradas</h1>
   <?php $results = getMenuType($conn,"entrada"); ?>

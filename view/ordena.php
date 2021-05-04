@@ -1,11 +1,15 @@
 <?php
 include "banner.php";
+include "../model/dataBaseConnection.php";
+include "../model/getMenuData.php";
 ?>
-<form id="formaOrden" method="get" accept-charset="utf-8">
+<form method="get" action="../controller/orden.php">
   <div class="ordena" id="entradas">
     <h1>Entradas</h1>
-    <label>Chistorra</label>
-    <select name="chistorra" id="chistorra">
+    <?php $results = getMenuType($conn,"entrada"); ?>
+    <?php foreach ($results as $r){ ?>
+    <label><?php echo $r['nombre'] ?></label>
+    <select name="<?php echo $r['nombre'] ?>">
       <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -18,25 +22,14 @@ include "banner.php";
       <option value="9">9</option>
       <option value="10">10</option>
     </select><br></br>
-    <label>Pulpo a la Gallega con Cachelos (180 Gr)</label>
-    <select name="pulpo" id="pulpo">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select><br></br>
+    <?php } ?>
   </div>
   <div class="ordena" id="sopas">
     <h1>Sopas</h1>
-    <label>Jugo de Carne</label>
-    <select name="jugoCarne" id="jugoCarne">
+    <?php $results = getMenuType($conn,"sopa"); ?>
+    <?php foreach ($results as $r){ ?>
+    <label><?php echo $r['nombre'] ?></label>
+    <select name="<?php echo $r['nombre'] ?>">
       <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -49,11 +42,14 @@ include "banner.php";
       <option value="9">9</option>
       <option value="10">10</option>
     </select><br></br>
+    <?php } ?>
   </div>
   <div class="ordena" id="ensaladas">
     <h1>Ensaladas</h1>
-    <label>Ensalada de Tomate con Queso de Cabra</label>
-    <select name="ensalada" id="ensalada">
+    <?php $results = getMenuType($conn,"ensalada"); ?>
+    <?php foreach ($results as $r){ ?>
+    <label><?php echo $r['nombre'] ?></label>
+    <select name="<?php echo $r['nombre'] ?>">
       <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -66,11 +62,14 @@ include "banner.php";
       <option value="9">9</option>
       <option value="10">10</option>
     </select><br></br>
+    <?php } ?>
   </div>
   <div class="ordena" id="platosFuertes">
     <h1>Platos Fuertes</h1>
-    <label>Solomillo Compostelano (200 Gr)</label>
-    <select name="solomillo" id="solomillo">
+    <?php $results = getMenuType($conn,"platoFuerte"); ?>
+    <?php foreach ($results as $r){ ?>
+    <label><?php echo $r['nombre'] ?></label>
+    <select name="<?php echo $r['nombre'] ?>">
       <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -83,39 +82,14 @@ include "banner.php";
       <option value="9">9</option>
       <option value="10">10</option>
     </select><br></br>
-    <label>Arrachera (250 Gr)</label>
-    <select name="arrachera" id="arrachera">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select><br></br>
-    <label>Salmón a la Rubio (220 Gr)</label>
-    <select name="salmon" id="salmon">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select><br></br>
+    <?php } ?>
   </div>
   <div class="ordena" id="bebidas">
     <h1>Bebidas</h1>
-    <label>Limonada de Verano</label>
-    <select name="limonada" id="limonada">
+    <?php $results = getMenuType($conn,"bebida"); ?>
+    <?php foreach ($results as $r){ ?>
+    <label><?php echo $r['nombre'] ?></label>
+    <select name="<?php echo $r['nombre'] ?>">
       <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -128,41 +102,36 @@ include "banner.php";
       <option value="9">9</option>
       <option value="10">10</option>
     </select><br></br>
-    <label>Marqués de Riscal ABA</label>
-    <select name="marques" id="marques">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select><br></br>
-  </div>
-  <div class="ordena" id="postres">
-    <h1>Postres</h1>
-    <label>Helado de Turrón</label>
-    <select name="helado" id="helado">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select><br></br>
-  </div>
+    <?php } ?>
+    <div class="ordena" id="postres">
+      <h1>Postres</h1>
+      <?php $results = getMenuType($conn,"postre"); ?>
+      <?php foreach ($results as $r){ ?>
+      <label><?php echo $r['nombre'] ?></label>
+      <select name="<?php echo $r['nombre'] ?>">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select><br></br>
+      <?php } ?>
+    </div>
+    <?php if(!empty($_SESSION['username']) && $_SESSION['tipo'] == "administrador"){ ?>
+    <button class="botones" name="finalizarDia">Finalizar Día</button>
+    <?php } ?>
+    <?php if(!empty($_SESSION['username']) && $_SESSION['tipo'] == "mesero"){ ?>
+    <button class="botones" name="cerrarCuenta">Cerrar cuenta</button>
+    <?php } ?>
+    <?php if(!empty($_SESSION['username']) && $_SESSION['tipo'] == "cliente"){ ?>
+    <button class="botones" name="ordenar" value="Get Selected Values">Ordenar</button>
+    <?php } ?>
 </form>
-<button class="botones" id="ordenar">Ordenar</button>
-<button class="botones" id="finalizar">Finalizar Día</button>
-<script type="text/javascript" src="scripts/ordenar.js"></script>
 </body>
 </html>

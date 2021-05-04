@@ -10,4 +10,10 @@ function getMenuItem($conn, $nombre){
   $query = mysqli_query($conn, $sql);
   return $query;
 }
+
+function getAllMenu($conn){
+  $sql = "SELECT * FROM menu WHERE 1";
+  $query = mysqli_query($conn, $sql);
+  return $query;
+}
 ?>
