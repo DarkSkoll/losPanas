@@ -7,7 +7,7 @@ $precio = $_GET['precio'];
 $imagen = $_GET['imagen'];
 $tipo = $_GET['tipo'];
 
-if (isset($_GET['actualizar'])) {
+if (isset($_GET['añadir'])) {
   $sql = "INSERT INTO `menu`(`nombre`, `descripcion`, `precio`, `tipo`, `stock`, `image`) VALUES ('$nombre','$descripcion','$precio','$tipo','15','$imagen')";
   if(mysqli_query($conn, $sql)){
     echo "Cambio en la base de datos";

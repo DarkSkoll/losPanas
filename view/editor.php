@@ -4,13 +4,13 @@ include "../model/dataBaseConnection.php";
 include "../model/getMenuData.php";
 $nombreOri = $_GET['nombrePlatillo'];
 $results = getMenuItem($conn,$nombreOri);
-$descripcionOri = null;
-$precioOri = null;
 foreach ($results as $r) {
   $descripcionOri = $r['descripcion'];
   $precioOri = $r['precio'];
-  $imagenOri = $r['imagen'];
+  $imagenOri = $r['image'];
+  $tipoOri = $r['tipo'];
 }
+$tipos = array("Entradas","Sopas","Ensaladas","Platos Fuertes","Bebidas","Postres");
 ?>
 <form method="get" accept-charset="utf-8" action="../model/updateDB.php">
   <label for="nombre">Nombre :</label><br></br>
@@ -18,9 +18,19 @@ foreach ($results as $r) {
   <label for="descripcion">Descripción :</label><br></br>
   <input type="text" name="descripcion" value="<?php echo $descripcionOri; ?>" size="80"></textarea><br></br>
   <label for="precio">Precio :</label><br></br>
-  <input type="text" name="precio" value="<?php printf("%.2F",$precioOri); ?>" size="20"><br></br>
+  <input type="text" name="precio" value="<?php printf("%.2F",$precioOri); ?>" size="80"><br></br>
   <label for="imagen">Imagen :</label><br></br>
-  <input type="text" name="imagen" value="<?php echo $imagenOri; ?>" size="20"><br></br>
+  <input type="text" name="imagen" value="<?php echo $imagenOri; ?>" size="80"><br></br>
+  <label for="tipo">Tipo :</label><br></br>
+  <select name="tipo" id="tipo">
+    <?php foreach ($tipos as $value) { ?>
+    <?php if(strcmp($value,$tipoOri) == 0 ){ ?>
+    <option value="<?php echo $value; ?>" selected><?php echo $value ?></option>
+    <?php }else{ ?>
+    <option value="<?php echo $value; ?>"><?php echo $value ?></option>
+    <?php } ?>
+    <?php } ?>
+  </select><br></br>
   <input type="hidden" name="nombreOri" value="<?php echo $nombreOri; ?>">
   <input type="submit" name="actualizar" value="Actualizar">
   <input type="submit" name="borrar" value="Eliminar">

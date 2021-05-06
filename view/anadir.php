@@ -1,6 +1,7 @@
 <?php
 include "banner.php";
 include "../model/dataBaseConnection.php";
+$tipos = array("Entradas","Sopas","Ensaladas","Platos Fuertes","Bebidas","Postres");
 ?>
 <form method="get" accept-charset="utf-8" action="../model/addMenuItem.php">
   <label for="nombre">Nombre :</label><br></br>
@@ -11,7 +12,11 @@ include "../model/dataBaseConnection.php";
   <input type="text" name="precio" value="" size="20"><br></br>
   <label for="precio">Imagen :</label><br></br>
   <input type="text" name="imagen" value="" size="20"><br></br>
-  <label for="precio">Tipo :</label><br></br>
-  <input type="text" name="tipo" value="" size="20"><br></br>
-  <input type="submit" name="actualizar" value="Añadir">
+  <label for="tipo">Tipo :</label><br></br>
+  <select name="tipo" id="tipo">
+    <?php foreach ($tipos as $value) { ?>
+    <option value="<?php echo $value; ?>"><?php echo $value ?></option>
+    <?php } ?>
+  </select><br></br>
+  <input type="submit" name="añadir" value="Añadir">
 </form>
