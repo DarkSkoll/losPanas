@@ -13,6 +13,16 @@ function buscarEnCuenta($nombre, $array) {
   return null;
 }
 
+function reducirStock($cantidad,$cantidadOri,$nombre,$conn){
+  $cantidadOri-=$cantidad;
+  $sql = "UPDATE `menu` SET `stock`='$cantidadOri' WHERE `nombre`='$nombre'";
+  if(mysqli_query($conn, $sql)){
+    echo "Cambio en la base de datos";
+  } else {
+    echo "ERROR: no se pudo ejecutar $sql. " . mysqli_error($conn);
+  }
+}
+
 $totalDia = 0;
 $total = $_SESSION['total'];
 $tmp = null;
@@ -25,12 +35,9 @@ if (isset($_GET['ordenar'])) {
       $precioUnitario = $item['precio'];
       $precioTotal = $precioUnitario*$cantidad;
       $key = buscarEnCuenta($item["nombre"],$cuenta);
-      echo $key;
+      $cantidadOri = $item["stock"];
+      reducirStock($cantidad,$cantidadOri,$item["nombre"],$conn);
       if(!is_null($key)){
-        echo $cuenta[$key]["nombre"];
-        echo $cuenta[$key]["cantidad"];
-        echo $cuenta[$key]["unitario"];
-        echo $cuenta[$key]["total"];
         $cuenta[$key]["cantidad"] += $cantidad;
         $cuenta[$key]["total"] += $precioTotal;
       }else{

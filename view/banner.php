@@ -6,7 +6,7 @@ session_start();
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css?<?php echo time(); ?>" type="text/css">
     <title>Los Panas</title>
   </head>
   <body>

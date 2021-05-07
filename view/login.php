@@ -7,6 +7,7 @@ include "../model/getRegistro.php";
 include "../controller/login.php";
 include "../controller/logout.php";
 include "../controller/pagar.php";
+include "../controller/cerrar.php";
 ?>
 
 <?php if(empty($_SESSION['username'])){?>
@@ -59,7 +60,7 @@ $total = $_SESSION["total"];
 </form>
 <?php }elseif($_SESSION["tipo"] == "administrador"){ ?>
 <?php
-$registro = getAllReg($conn);
+$registro = getDayReg($conn);
 $total = 0;
 ?>
 <div class="cuenta">
@@ -83,6 +84,9 @@ $total = 0;
     </tr>
   </table>
 </div>
+<form method="POST">
+  <button name="cerrar">Cerrar Día</button>
+</form>
 <?php } ?>
 <form method="POST">
   <button name="logout">Logout</button>
