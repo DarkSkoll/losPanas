@@ -20,16 +20,10 @@ $tipos = array("Entradas","Sopas","Ensaladas","Platos Fuertes","Bebidas","Postre
 </div>
 <?php } ?>
 
-<form action="cuenta.php" method="get" accept-charset="utf-8">
+<form action="../controller/orden.php" method="get" accept-charset="utf-8">
 <?php foreach ($tipos as $value) {
 imprimirFormaOrden($value,$conn);
   } ?>
-  <?php if(!empty($_SESSION['username']) && $_SESSION['tipo'] == "administrador"){ ?>
-  <input type="submit" value="Finalizar Día" name="finalizarDia" id="finalizarDia"/>
-  <?php } ?>
-  <?php if(!empty($_SESSION['username']) && $_SESSION['tipo'] == "mesero"){ ?>
-  <input type="submit" value="Cerrar Cuenta" name="cerrarCuenta" id="cerrarCuenta"/>
-  <?php } ?>
   <?php if(!empty($_SESSION['username']) && $_SESSION['tipo'] == "cliente"){ ?>
   <input type="submit" value="Ordenar" name="ordenar" id="ordenar"/>
   <?php } ?>
