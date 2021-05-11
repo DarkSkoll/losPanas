@@ -8,6 +8,7 @@ if(isset($_REQUEST['cerrar'])){
   } else {
     echo "ERROR: no se pudo ejecutar $sql. " . mysqli_error($conn);
   }
-  header("Location: /losPanas/view/login.php");
+  //header("Location: /losPanas/view/login.php");
+  echo "<script>alert(\"Restableciendo el stock de los platillos\");</script>";
 }
 ?>

@@ -3,7 +3,9 @@ include "banner.php";
 include "../model/dataBaseConnection.php";
 $tipos = array("Entradas","Sopas","Ensaladas","Platos Fuertes","Bebidas","Postres");
 ?>
-<form method="get" accept-charset="utf-8" action="../model/addMenuItem.php">
+<br></br>
+<br></br>
+<form class="logger" method="get" accept-charset="utf-8" action="../model/addMenuItem.php">
   <label for="nombre">Nombre :</label><br></br>
   <input type="text" name="nombre" value="" size="80"><br></br>
   <label for="descripcion">Descripción :</label><br></br>
@@ -18,5 +20,5 @@ $tipos = array("Entradas","Sopas","Ensaladas","Platos Fuertes","Bebidas","Postre
     <option value="<?php echo $value; ?>"><?php echo $value ?></option>
     <?php } ?>
   </select><br></br>
-  <input type="submit" name="añadir" value="Añadir">
+  <button type="submit" name="añadir" value="Añadir">Añadir</button>
 </form>

@@ -15,7 +15,7 @@ $tipos = array("Entradas","Sopas","Ensaladas","Platos Fuertes","Bebidas","Postre
   <?php if(!empty($_SESSION['username']) && $_SESSION['tipo'] == "administrador"){ ?>
   <form method="get" action="editor.php">
     <input type="hidden" name="nombrePlatillo" value="<?php echo $r['nombre']; ?>">
-    <input type="submit" value="Editar">
+    <button type="submit" value="Editar">Editar</button>
   </form>
   <?php } ?>
   <figure>
@@ -28,7 +28,7 @@ $tipos = array("Entradas","Sopas","Ensaladas","Platos Fuertes","Bebidas","Postre
 
 <?php if(!empty($_SESSION['username']) && $_SESSION['tipo'] == "administrador"){ ?>
 <form method="get" action="anadir.php">
-  <input type="submit" value="Añadir">
+  <button type="submit" value="Añadir">Añadir</button>
 </form>
 <?php } ?>
 

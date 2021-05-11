@@ -12,7 +12,8 @@ foreach ($results as $r) {
 }
 $tipos = array("Entradas","Sopas","Ensaladas","Platos Fuertes","Bebidas","Postres");
 ?>
-<form method="get" accept-charset="utf-8" action="../model/updateDB.php">
+<br></br><br></br>
+<form class="logger" method="get" accept-charset="utf-8" action="../model/updateDB.php">
   <label for="nombre">Nombre :</label><br></br>
   <input type="text" name="nombre" value="<?php echo $nombreOri; ?>" size="80"><br></br>
   <label for="descripcion">Descripción :</label><br></br>
@@ -32,6 +33,6 @@ $tipos = array("Entradas","Sopas","Ensaladas","Platos Fuertes","Bebidas","Postre
     <?php } ?>
   </select><br></br>
   <input type="hidden" name="nombreOri" value="<?php echo $nombreOri; ?>">
-  <input type="submit" name="actualizar" value="Actualizar">
-  <input type="submit" name="borrar" value="Eliminar">
+  <button type="submit" name="actualizar" value="Actualizar">Actualizar</button>
+  <button type="submit" name="borrar" value="Eliminar">Eliminar</button>
 </form>

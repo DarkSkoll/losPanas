@@ -39,6 +39,7 @@ nav{
 
 .linkBarra:hover {
   background-color: var(--yellow);
+  color: var(--black);
 }
 
 #fondoLogo{
@@ -129,6 +130,15 @@ nav{
   font-size: 18px;
 }
 
+.logger select {
+  text-align: center;
+  background: transparent;
+  width: 140px;
+  height: 35px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+}
+
 .sesion{
   margin-right: 20%;
   margin-left: 20%;
@@ -175,39 +185,19 @@ nav{
 button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #fb1414;
+  background-color: var(--red);
   border: none;
-  color: #FFFFFF;
+  color: var(--white);
   text-align: center;
   font-size: 20px;
   padding: 10px;
-  width: 10%;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
 }
 
-button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-button:hover span {
-  padding-right: 25px;
-}
-
-button:hover span:after {
-  opacity: 1;
-  right: 0;
+button:hover {
+  padding-right: 10px;
+  background-color: var(--yellow);
+  color: var(--black);
 }
