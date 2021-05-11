@@ -11,12 +11,12 @@ include "../controller/cerrar.php";
 ?>
 
 <?php if(empty($_SESSION['username'])){?>
+<br></br>
 <div class="logger">
-
   <form method="POST">
     <h2>Login</h2>
     <input type="text" name="username" placeholder="Usuario">
-    <input type="password" name="password" placeholder="Contraseña">
+    <input type="password" name="password" placeholder="Contraseña"><br></br>
     <button type="submit" name="login">Login</button>
   </form>
 
@@ -24,7 +24,7 @@ include "../controller/cerrar.php";
 <?php }?>
 
 <?php if(!empty($_SESSION['username'])){?>
-<div>
+<div class="cuenta">
   <h1>Hola <?php echo $_SESSION['username'];?></h1>
 </div>
 
@@ -33,7 +33,6 @@ $cuenta = $_SESSION["cuenta"];
 $total = $_SESSION["total"];
 ?>
 <div class="cuenta">
-  <h1>Cuenta</h1>
   <table>
     <tr>
       <th>Platillo</th>
@@ -51,13 +50,14 @@ $total = $_SESSION["total"];
     <?php } ?>
     <tr>
       <td>Total</td>
+      <td></td>
+      <td></td>
       <td>$<?php echo $total ?></td>
     </tr>
   </table>
 </div>
-<form method="POST">
+<form class="sesion" method="POST">
   <button name="pagar">Pagar</button>
-</form>
 <?php }elseif($_SESSION["tipo"] == "administrador"){ ?>
 <?php
 $registro = getDayReg($conn);
@@ -76,19 +76,19 @@ $total = 0;
       <td><?php echo $item["fecha"]; ?></td>
       <td>$<?php echo $item["ganancia"]; ?></td>
     </tr>
-    <?php } ?>
     <?php $total += $item["ganancia"]; ?>
+    <?php } ?>
     <tr>
       <td>Total</td>
+      <td></td>
       <td>$<?php echo $total ?></td>
     </tr>
   </table>
 </div>
-<form method="POST">
+<br></br>
+<form class="sesion" method="POST">
   <button name="cerrar">Cerrar Día</button>
-</form>
 <?php } ?>
-<form method="POST">
   <button name="logout">Logout</button>
 </form>
 <?php }?>

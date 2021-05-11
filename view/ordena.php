@@ -25,7 +25,7 @@ $tipos = array("Entradas","Sopas","Ensaladas","Platos Fuertes","Bebidas","Postre
 imprimirFormaOrden($value,$conn);
   } ?>
   <?php if(!empty($_SESSION['username']) && $_SESSION['tipo'] == "cliente"){ ?>
-  <input type="submit" value="Ordenar" name="ordenar" id="ordenar"/>
+  <button class="center" type="submit" value="Ordenar" name="ordenar" id="ordenar"/>Ordenar</button>
   <?php } ?>
 </form>
 </body>
